@@ -1,20 +1,22 @@
-import Header from './components/Header'
-import './App.css'
-import WeatherApp from './components/WeatherApp';
-import About from './components/About'
+import React from "react";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Content from "./layout/Content";
+import Home from "./pages/Home";
+import Forecast from "./pages/Forecast";
+import About from "./pages/About";
 
-
-function App() {
-  return (
-    <>
-      <Header />
-      <div className="App">
-        <WeatherApp />
-      </div>
-      <About />
-      
-    </>
-  )
+const App:React.FC=()=>{
+  return(
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Content />}>
+          <Route index element={<Home />} />
+          <Route path="forecast" element={<Forecast />}/>
+          <Route path="about" element={<About/>}/>
+        </Route>
+      </Routes>
+    </BrowserRouter>
+  );
 }
 
-export default App
+export default App;

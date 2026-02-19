@@ -1,0 +1,24 @@
+.app-layout{
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(135deg, #7AAACE 0%, #261CC1 100%);
+}
+.main-content{
+  flex: 1;
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 20px;
+  animation: fadeIn 0.4ms ease-in-out;
+}
+@keyframes fadeIn{
+  from{
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to{
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
